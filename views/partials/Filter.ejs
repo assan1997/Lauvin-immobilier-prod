@@ -1,0 +1,82 @@
+<div class="filter-search">
+  <div class="container">
+    <form class="filter-form" method="post" action="/search">
+      <div class="location">
+        <p>Localisation</p>
+        <select class="filter-location" name="location">
+          <option value="Abidjan">Abidjan</option>
+          <option value="Interieur">Intérieur du pays</option>
+        </select>
+      </div>
+      <div class="search-type">
+        <p>Type de propriété</p>
+        <select class="filter-property" name="propertyType">
+          <option value="Maison">Maison</option>
+          <option value="Bureau">Bureau</option>
+          <option value="Magasin">Magasin</option>
+        </select>
+      </div>
+      <div class="search-type">
+        <p>Location / Vente</p>
+        <select class="filter-property" name="status">
+          <option value="En Location">Location</option>
+          <option value="En Vente">Vente</option>
+        </select>
+      </div>
+      <div class="bedrooms">
+        <p>Pièces</p>
+        <div class="room-filter-pagi">
+          <div class="bf-item">
+            <input type="radio" name="rooms" id="room-1" value="1" checked />
+            <label for="room-1">1</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="rooms" id="room-2" value="2" />
+            <label for="room-2">2</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="rooms" id="room-3" value="3" />
+            <label for="room-3">3</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="rooms" id="room-4" value="4" />
+            <label for="room-4">4+</label>
+          </div>
+        </div>
+      </div>
+      <div class="bathrooms">
+        <p>Salle de bains</p>
+        <div class="room-filter-pagi">
+          <div class="bf-item">
+            <input
+              type="radio"
+              name="baths"
+              id="bathroom-1"
+              value="1"
+              checked
+            />
+            <label for="bathroom-1">1</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="baths" id="bathroom-2" value="2" />
+            <label for="bathroom-2">2</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="baths" id="bathroom-3" value="3" />
+            <label for="bathroom-3">3</label>
+          </div>
+          <div class="bf-item">
+            <input type="radio" name="baths" id="bathroom-4" value="4" />
+            <label for="bathroom-4">4+</label>
+          </div>
+        </div>
+      </div>
+      <div class="search-btn">
+        <button type="submit">
+          <i class="flaticon-search"></i
+          ><i style="font-size: 0.8em;">Chercher </i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

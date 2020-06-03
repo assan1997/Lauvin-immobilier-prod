@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('./partials/Head') -%>
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <%- include('./partials/Header') -%>
+    <section class="hero-section home-page set-bg" data-setbg="img/bg.jpg">
+      <div class="container hero-text text-white">
+        <h2>Bienvenue</h2>
+        <h1>
+          sur le portail de l'immobilier <br />
+          et de la construction.
+        </h1>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Filter Search Section Begin -->
+    <%- include('./partials/Filter') -%>
+    <!-- Filter Search Section End -->
+    <!-- Hotel Room Section Begin -->
+
+    <%- include('./partials/Item') -%>
+    <!-- Hotel Room Section End -->
+    <!-- Popular Room Section Begin -->
+    <section class="popular-room p-in">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6">
+            <h4 style="color: gray; text-transform: uppercase;">
+              Parcelles et plantations
+            </h4>
+            <br />
+            <div class="slider-active owl-carousel">
+              <% if(locals.items){%> <% for(i of items){%> <%if(i.isTerrain){%>
+              <div class="popular-items">
+                <div class="popular-room-text">
+                  <div class="popular-room-details">
+                    <div class="popular-room-title">
+                      <h5><%=i.title%></h5>
+                      <a href="#"
+                        ><i class="flaticon-placeholder"></i>
+                        <span><%=i.location%></span></a
+                      >
+                      <div class="size">
+                        <img src="img/rooms/size.png" alt="" />
+                        <i class="flaticon-bath"></i>
+                        <span
+                          ><span><%=i.size%></span>
+                          <span><%=i.sizeUnit%></span></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="popular-room-description">
+                    <div class="popular-room-desc">
+                      <p>
+                        <%=i.overview%>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="popular-room-price">
+                    <p><%=i.status%></p>
+                    <span><%=i.price + ' Fcfa' +' / ' + i.sizeUnit %></span>
+                  </div>
+                  <a href="/propriete/<%=i._id%>" class="site-btn btn-line"
+                    >Détails</a
+                  >
+                </div>
+              </div>
+              <%}%> <%}%> <%}%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="left-side">
+              <h2>
+                Pourquoi nous choisir ?
+              </h2>
+              <p>
+                Lauvin Immobilier est un service specialisé dans la gestion
+                Immobilière et dans la construction . <br />
+                C'est aussi un moteur de recherche qui vous permet de trouver
+                rapidement les biens immobiliers sur tout le territoire .
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="right-side">
+              <ul>
+                <li>
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <div class="row">
+                        <div class="">
+                          <span
+                            style="
+                              color: white;
+                              background: rgb(183, 229, 247);
+                              height: 60px;
+                              width: 60px;
+                              border-radius: 50%;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
+                            <i class="flaticon-map"></i
+                            ><i class="flaticon-placeholder"></i>
+                          </span>
+                        </div>
+                        &nbsp;
+                        <div class="col-8" style="">
+                          <div class="row">
+                            <h6>Faciliter vos recherches</h6>
+                            <br />
+                            <div style="font-size: 0.9em;">
+                              Nous sommes engagés à vous faciliter la recherche
+                              de biens Immobiliers qui correspondent à vos
+                              attentes
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-6">
+                      <div class="row">
+                        <div class="">
+                          <span
+                            style="
+                              color: white;
+                              background: rgb(183, 229, 247);
+                              height: 60px;
+                              width: 60px;
+                              border-radius: 50%;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                            "
+                          >
+                            <i class="flaticon-map"></i
+                            ><i class="flaticon-placeholder"></i>
+                          </span>
+                        </div>
+                        &nbsp;
+                        <div class="col-8" style="">
+                          <div class="row">
+                            <h6>Réaliser vos projets</h6>
+                            <br />
+                            <div style="font-size: 0.9em;">
+                              Nous mettons à votre disposition une equipe fiable
+                              dotée d'un grand savoir faire pour la réalisation
+                              de vos projets de construction
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Popular Room Section End -->
+    <!-- Newslatter Section Begin -->
+    <section class="newslatter-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="newslatter-text">
+              <img src="img/message.png" alt="" />
+              <h4>
+                Souscrivez à notre newsletter pour ne rien manquer de nos <br />
+                prochaines offres .
+              </h4>
+              <form>
+                <input type="text" placeholder="Email address" />
+                <button type="submit" class="site-btn news-btn">
+                  Souscrire
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newslatter Section End -->
+    <!-- Servies Section Begin -->
+    <!-- Servies Section End -->
+    <section class="instagram">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Nos Partenaires</h2>
+          </div>
+          <div class="col-12">
+            <div class="container-fluid">
+              <div
+                style="display: flex; justify-content: center; padding: 20px;"
+              >
+                <img
+                  src="img/asb.png"
+                  alt=""
+                  style="
+                    height: 150px;
+                    width: 150px;
+                    margin: 5px;
+                    border-radius: 5%;
+                  "
+                />
+                <img
+                  src="img/akassibtp.png "
+                  alt=""
+                  style="
+                    height: 150px;
+                    width: 150px;
+                    margin: 5px;
+                    border-radius: 5%;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section Begin -->
+    <%- include('./partials/Footer') -%>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+  </body>
+  <%- include('./partials/Script')-%>
+</html>

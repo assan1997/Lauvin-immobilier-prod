@@ -1,0 +1,75 @@
+<section class="hotel-rooms spad">
+  <div class="container">
+    <div class="row">
+      <%if(locals.items){%> <% for(i of items){%> <%if(!i.isTerrain){%>
+      <div class="col-lg-4 col-md-6">
+        <div class="room-items">
+          <div
+            class="room-img set-bg"
+            data-setbg="http://localhost:5000/ressources/<%=i.images[0]%>"
+          >
+            <a href="#" class="room-content">
+              <i class="flaticon-heart"></i>
+            </a>
+          </div>
+
+          <div class="room-text">
+            <div class="room-details">
+              <div class="room-title">
+                <h5>
+                  <%=i.title%>
+                </h5>
+                <a href="#"
+                  ><i class="flaticon-placeholder"></i>
+                  <span><%=i.location%></span></a
+                >
+
+                <span class="video-button large-width"
+                  ><i class="video-icon fas fa-play"></i
+                ></span>
+              </div>
+            </div>
+            <div class="room-features">
+              <div class="room-info">
+                <div class="size">
+                  <p>Superficie</p>
+                  <img src="img/rooms/size.png" alt="" />
+                  <i class="flaticon-bath"></i>
+                  <span
+                    ><span><%=i.size%></span> <span><%=i.sizeUnit%></span></span
+                  >
+                </div>
+                <div class="beds">
+                  <p>Chambres</p>
+                  <img src="img/rooms/bed.png" alt="" />
+                  <span><%if(i.rooms!==0){%><%=i.rooms%><%}%></span>
+                </div>
+                <div class="baths">
+                  <p>Salle de bains</p>
+                  <img src="img/rooms/bath.png" alt="" />
+                  <span><%if(i.baths!==0){%><%=i.baths%><%}%></span>
+                </div>
+                <div class="garage">
+                  <p>Garage</p>
+                  <img src="img/rooms/garage.png" alt="" />
+                  <span><%if(i.garages!==0){%><%=i.garages%><%}%></span>
+                </div>
+              </div>
+            </div>
+            <div class="room-price">
+              <p><%=i.status%></p>
+              <span style="font-size: 1.1em;">
+                <%=i.price + ' FCFA '%> <%if(i.status ==='En Location'){%> <%=
+                '/' + i.payCurrency%> <%}%>
+              </span>
+            </div>
+            <a href="/propriete/<%=i._id%>" class="site-btn btn-line"
+              >Détails</a
+            >
+          </div>
+        </div>
+      </div>
+      <%}%> <%}%> <%}%>
+    </div>
+  </div>
+</section>

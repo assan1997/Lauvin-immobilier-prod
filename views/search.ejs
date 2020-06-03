@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Page Preloder -->
+    <%- include('./partials/Head') -%>
+
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <%- include('./partials/Header') -%>
+    <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+    <section class="hero-section set-bg search-result" data-setbg="img/bg.jpg">
+      <div class="container hero-text text-white">
+        <h2>Resultats de recherche</h2>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Filter Search Section Begin -->
+    <%- include('./partials/Filter') -%>
+    <!-- Filter Search Section End -->
+    <!-- Map Section Begin -->
+
+    <!-- Map Section End -->
+    <!-- Hotel Room Section Begin -->
+    <%- include('./partials/Item') -%>
+    <!-- Hotel Room Section End -->
+    <section class="instagram">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Nos Partenaires</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section Begin -->
+    <%-include('./partials/Footer')%>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <%-include('./partials/Script')%>
+  </body>
+</html>
